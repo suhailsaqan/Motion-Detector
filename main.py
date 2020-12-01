@@ -12,16 +12,9 @@ def main():
     cap.set(3, w)
     cap.set(4, h)
 
-
     if cv2.EVENT_LBUTTONDOWN == True:
         event = cv2.EVENT_LBUTTONDOWN
         cv2.destroyAllWindows()
-        print('TESTING')
-
-#//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    #    print(cap.get(3))
-    #    print(cap.get(4))
 
     if cap.isOpened():
         ret, frame = cap.read()
@@ -51,10 +44,12 @@ def main():
 
         if len(c) == 0:
             print("no motion detected")
-            cv2.putText(frame1, 'NO MOTION DETECTED', (650, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
+            cv2.putText(frame1, 'NO MOTION DETECTED', (650, 50),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
         else:
             print("motion detected")
-            cv2.putText(frame1, 'MOTION DETECTED', (650, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
+            cv2.putText(frame1, 'MOTION DETECTED', (650, 50),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
 
         cv2.imshow("Original", frame2)
         cv2.imshow("Output", frame1)
